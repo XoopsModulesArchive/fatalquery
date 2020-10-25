@@ -1,0 +1,19 @@
+<table align="center" border=0 cellspacing=1 cellpadding=0>
+  <tr>
+    <td align="left" class='head'><b><{$_fqadminsvrname}></b>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class='head'><b><{$_fqsvraddress}></b>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class='head'><b><{$_fqonline}></b>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class='head'><b><{$_fqsvrcurrmap}></b>&nbsp;&nbsp;&nbsp;</td>
+    </tr><!--
+  <tr>
+    <td colspan=4 height=1 bgcolor=black></td>
+    </tr>-->
+ <{section name=i loop=$svr_info}>
+  <tr>
+    <td align="left" class="<{$svr_info[i].tdclass}>"><a href="index.php?op=userquery&svrid=<{$svr_info[i].svr_id}>"><{$svr_info[i].svr_uname}></a>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class="<{$svr_info[i].tdclass}>"><a href="index.php?op=userquery&svrid=<{$svr_info[i].svr_id}>"><{$svr_info[i].svr_address}>:<{$svr_info[i].svr_port}></a>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class="<{$svr_info[i].tdclass}>"><{$svr_info[i].mActive}> / <{$svr_info[i].mMax}>&nbsp;&nbsp;&nbsp;</td>
+    <td align="left" class="<{$svr_info[i].tdclass}>"><{$svr_info[i].curr_mapname}></td>
+    </tr>
+ <{/section}>
+  </table>

@@ -1,0 +1,11 @@
+<{include file="db:fatalquery_page_title.html"}>
+<{include file="db:fatalquery_toplinks.html"}>
+<br>
+<{if $default_view}>
+<{include file="db:fatalquery_default_view_full.html"}>
+<{else}>
+<{include file="db:fatalquery_default_view_short.html"}>
+<{/if}>
+<{if $custom_on}>
+<{include file="db:fatalquery_custom_code.html"}>
+<{/if}>

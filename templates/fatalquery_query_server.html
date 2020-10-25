@@ -1,0 +1,135 @@
+<{section name=i loop=$serverlist}>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <{if $serverlist[i].svr_hostname}>
+  <tr colspan="2">
+    <td align="center" colspan="2">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr align="left" valign="top" class=head>
+          <td align="center"><b><{$serverlist[i].svr_hostname}></b></td>
+          </tr>
+        <tr align="left" valign="center">
+          <td height="1" bgcolor="black"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  <{/if}>
+  <tr>
+    <td align="center">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td nowrap align="center" width="50%" valign="top"><br>
+            <table border="0" width="100%" cellspacing="0">
+              <tr align="left" valign="top" class=head>
+                <td colspan="2" align="center"><b><{$_fqsvrdetails}></b></td></tr>
+              <tr height="1" colspan="4">
+                <td height="1" colspan="4" bgcolor="black"></td></tr>
+              <{if $serverlist[i].Server_Address}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvraddress}>: </b></td><td><{$serverlist[i].Server_Address}>:<{$serverlist[i].Server_Port}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].mDesc}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrmoddesc}>: </b></td><td><{$serverlist[i].mDesc}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].mModVer != ''}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrmodver}>: </b></td><td><{$serverlist[i].mModVer}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].mMax}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqplyrsonline}>: </b></td><td><{$serverlist[i].mActive}> / <{$serverlist[i].mMax}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].Server_Type}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrtype}>: </b></td><td><{$serverlist[i].Server_Type}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].Server_OS}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvros}>: </b></td><td><{$serverlist[i].Server_OS}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].Server_Password}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrpass}>: </b></td><td><{$serverlist[i].Server_Password}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].Server_Secure}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrissecured}>: </b></td><td><{$serverlist[i].Server_Secure}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].mPing}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrping}>: </b></td><td><{$serverlist[i].mPing}></td></tr>
+              <{/if}>
+              <{if $serverlist[i].svr_rules}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td colspan="2"><b><{$_fqsvrrules}>: </b>
+                      <select name="select">
+                        <{section name=rule loop=$serverlist[i].svr_rules}>
+                          <option value=""><{$serverlist[i].svr_rules[rule].cvar}> = <{$serverlist[i].svr_rules[rule].value}></option>
+                          <{/section}></select>
+                  </td>
+                </tr>
+              <{/if}>
+              <{if $serverlist[i].curr_mapname}>
+              <tr align="left" valign="top" class=<{cycle values="even,odd"}>>
+                <td nowrap width="100"><b><{$_fqsvrmap}>: </b></td><td align="left"><a href="<{$serverlist[i].map_dl_name}>"><{$serverlist[i].curr_mapname}></a></td></tr>
+              <{/if}>
+              <{if $serverlist[i].map_pic_name}>
+              <tr align="center" valign="top" class=<{cycle values="even,odd"}>>
+                <td colspan="2" align="left"><table border="1" cellspacing="0" cellpadding="0">
+                  <table>
+                    <tr>
+                      <td><a href="<{$serverlist[i].map_dl_name}>"><img src="<{$serverlist[i].map_pic_name}>" border="0" width="160" height="120"></a></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              <{/if}>
+              </table>
+            </td>
+          <td nowrap align="center" width="50%" valign="top"><br>
+            <table width="100%" border="0" cellspacing="0">
+              <tr align="left" valign="top" class=head>
+                <td align="center" >&nbsp;<a href="index.php?<{$serverlist[i].link}>sort=name"><b><{$_fqplayer}></b></a></td>
+                <td align="center">&nbsp;<a href="index.php?<{$serverlist[i].link}>sort=frag"><b><{$_fqfrags}></b> </a></td>
+                <td align="center">&nbsp;<a href="index.php?<{$serverlist[i].link}>sort=time"><b><{$_fqtime}>  </b></a></td>
+                <td align="center">&nbsp;<a href="index.php?<{$serverlist[i].link}>sort=kpm"><b><{$_fqkpm}></b> </a></td>
+                </tr>
+              <tr height="1">
+                <td height="1" colspan="4" bgcolor="black"></td>
+                </tr>
+              <{if $serverlist[i].playerlist}>
+              <{foreach item=player from=$serverlist[i].playerlist}>
+              <tr class=<{cycle values="odd,even"}>>
+                <td valign="top" align="left"><{$player.Name}></td>
+                <td valign="top" align="center"><{$player.Frags}></td>
+                <td valign="top" align="center"><{$player.totaltime}></td>
+                <td valign="top" align="center"><{$player.kpm}></td>
+                </tr>
+              <{/foreach}>
+              </table>
+              <{else}>
+              </table>
+              <table width="100%" border="0" cellspacing="0">
+                <tr class=<{cycle values="even,odd"}>>
+                  <td align="center"><center><strong><{$_fqplyrsnone}></strong></center></td>
+                  </tr>
+                </table>
+              <{/if}>
+            </td>
+          </tr>
+        <{if $serverlist[i].svr_join}>
+        <tr>
+          <td colspan="2" align="left"><strong><a href="halflife://<{$serverlist[i].Server_Address}>:<{$serverlist[i].Server_Port}>"><{$_fqsvrjoin}></a> -- <{$_fqsvrjoininfo}></strong></td>
+          </tr>
+        <{/if}>
+        </table>
+      </td>
+    </tr>
+  <{if $gobacklink}>
+  <tr>
+    <td align="center"><br>[ <a href="index.php"><b><{$_fqgoback}></b></a> ] </td>
+    </tr>
+  <{/if}>
+</table>
+<{/section}>

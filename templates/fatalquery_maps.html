@@ -1,0 +1,93 @@
+<table width="500" border="0" cellspacing="0" align="center">
+  <tr>
+    <td colspan="4" align="center"><{if $_fqnomapsinlisting!=$_fqnminlistchck}>
+      <table width="100%" border="0" cellspacing="0">
+        <tr>
+          <td align="center"><u><b><{$map_heading_1}></b></u> </td>
+        </tr>
+      </table>
+      <br>
+<{section name=i loop=$map_cycle}> <{if $map_cycle[i].i=='0'}>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center"> <{/if}>
+          <td class="<{$map_cycle[i].tdclass}>"><table width="166" border="1" cellspacing="0">
+              <tr>
+                <td colspan ="2" width="160" align="center"><strong><a href="<{$map_cycle[i].map_dl_name}>"><{$map_cycle[i].map_name}></a></strong></td>
+              </tr>
+              <tr>
+                <td colspan ="2" align="center"><a href="<{$map_cycle[i].map_dl_name}>"><img src="<{$map_cycle[i].map_pic_name}>" width="160" height="120" border="0"></a></td>
+              </tr>
+              <tr>
+                <td align="center" nowrap><{$map_cycle[i].map_dl_count}> <{$_fqdownloads}></td>
+                <td align="center" nowrap><{$map_cycle[i].date_added}></td>
+<{php}>/*
+                <td align="right" nowrap>Debug: <{$map_cycle[i].i}><{$map_cycle[i].j}><{$map_cycle[i].k}><{$map_cycle[i].tdclass}></td>
+                */<{/php}> </tr>
+            </table></td>
+<{if $map_cycle[i].i==$maps_in_row}> </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+<{/if}> <{if $map_cycle[i].j==0}> 
+  </tr>
+</table>
+<{/if}> <{/section}>
+</tr>
+</table>
+<table width="500" border="0" cellspacing="0" align="center">
+  <tr>
+    <td colspan="4" align="center"><table width="100%" border="0" cellspacing="0">
+        <tr>
+          <td align="center"><u><b><{$map_heading_2}></b></u></td>
+        </tr>
+      </table>
+      <br>
+<{section name=i loop=$available_maps}> <{if $available_maps[i].i==0}>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center"> <{/if}>
+          <td class="<{$available_maps[i].tdclass}>"><table width="166" border="1" cellspacing="0">
+              <tr>
+                <td colspan ="2" width="160" align="center"><strong><a href="<{$available_maps[i].map_dl_name}>"><{$available_maps[i].map_name}></a></strong></td>
+              </tr>
+              <tr>
+                <td colspan ="2" align="center"><a href="<{$available_maps[i].map_dl_name}>"><img src="<{$available_maps[i].map_pic_name}>" width="160" height="120" border="0"></a></td>
+              </tr>
+              <tr>
+                <td align="center" nowrap><{$available_maps[i].map_dl_count}> <{$_fqdownloads}></td>
+                <td align="center" nowrap><{$available_maps[i].date_added}></td>
+<{php}>/*
+                <td align="center" nowrap>Debug: <{$available_maps[i].i}><{$available_maps[i].j}><{$available_maps[i].k}><{$available_maps[i].tdclass}></td>
+                */<{/php}> </tr>
+            </table></td>
+<{if $available_maps[i].i==$maps_in_row}> </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+<{/if}> <{if $available_maps[i].j==0}> 
+  </tr>
+</table>
+<{/if}> <{/section}> <{if $map_t_finished==1}>
+</tr>
+</table>
+<{/if}>
+</tr>
+</table>
+<{/if}> <{if $_fqnomapsinlisting}>
+<center>
+<{$_fqnomapsinlisting}>
+</center>
+<br>
+<br>
+<{/if}>
+<center>
+  [ <a href=javascript:history.go(-1)><{$_fqgoback}></a> ]
+</center>
+</td>
+</tr>
+</table>

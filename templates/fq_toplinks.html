@@ -1,0 +1,17 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<form action="index.php?op=userquery&svrid="<{ $config_info.user_query_id }>" method="post" name="userquery">
+
+<{ if $config_info.map_dl_link=='1' }>
+<td width="$width" align="center"><a href="index.php?op=maps">"._FQMAPDLLINK."</a></td>
+<{ /if }>
+<{ if $config_info.user_query=='1' }>
+<td align="$align" width="$width">
+"._FQSVRADDRESS.": <input name="user_address" type="text">
+"._FQSVRPORT.": <input name="user_port" value="27015" type="text" size="6">
+<input name=""._FQQUERY."" type="submit" value=""._FQQUERY."">
+</td>
+<{ /if }>
+</form>
+</tr>
+</table>

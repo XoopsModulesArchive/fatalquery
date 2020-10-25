@@ -1,0 +1,32 @@
+<{ if $block.count > 0 }>
+<{foreach item=server from=$block.serverlisting}>
+	<br>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr><td colspan="2">
+	<b><{$server.hostname}><b></td></tr>
+	<tr><td colspan="2" bgcolor=black></td></tr>
+	<tr><td align="left"><{$server.lang_address}>:</td>
+	<td><{$server.address}></td></tr>
+	<tr><td align="left"><{$server.lang_port}>:</td>
+	<td><{$server.port}></td></tr>
+	<tr><td align="left"><{$server.lang_mod}>:</td>
+	<td><{$server.desc}></td></tr>
+	<tr><td align="left"><{$server.lang_players}>:</td>
+	<td><{$server.active}> / <{$server.max}></td></tr>
+	<tr><td align="left"><{$server.lang_map}>:</td>
+	<td><{$server.map}></td></tr>
+	<tr><td colspan="2" align="center"><br><hr height="1" width="100%"></td></tr>
+	</table>
+<{/foreach}>
+<{ else }>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align="center">
+<{$block.serverlisting[lang_noservers]}>
+</td></tr>
+</table>
+<{ /if }>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align="center">
+<br>[ <a href="<{$xoops_url}>/modules/fatalquery/index.php"><{$server.lang_moreinfo}></a> ]
+</td></tr>
+</table>

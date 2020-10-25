@@ -1,0 +1,1 @@
+GIF87a C8&pƒ&|AÓ”6@44 Aè@5h¨ÿ!ƒG\ƒ“ŒÃ\¡ÈfG€¡”õ¥Øª,ñÖÆãASFå¦\9Ëç¬}[•§À¦ÝkJ‹ùDËP"`ê4Û7lc0¨IŒ·Ybu+Æ/‡ú¡kÞu0@À!X™õ„3ßaì¸?„ ·:,'K¯˜ók„ÆÙhA;¼ÃD†3f¿¥¶Ý˜6µ©¡šèõÀÍˆY@
